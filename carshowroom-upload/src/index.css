@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap');
+
+:root {
+  /* Dark theme (default) */
+  --bg-primary: #0a0a0f;
+  --bg-secondary: #111118;
+  --bg-card: #16161f;
+  --bg-elevated: #1e1e2a;
+  --surface: #252535;
+  --border: rgba(255,255,255,0.07);
+  --border-accent: rgba(220, 38, 38, 0.4);
+  --text-primary: #f0f0f5;
+  --text-secondary: #8888aa;
+  --text-muted: #555568;
+  --accent: #dc2626;
+  --accent-glow: rgba(220, 38, 38, 0.3);
+  --accent-hover: #ef4444;
+  --gold: #d4a44c;
+  --gold-glow: rgba(212, 164, 76, 0.25);
+  --green: #10b981;
+  --green-glow: rgba(16, 185, 129, 0.2);
+  --gradient-hero: linear-gradient(135deg, #0a0a0f 0%, #16161f 50%, #0f0f18 100%);
+  --shadow-card: 0 8px 32px rgba(0,0,0,0.5), 0 2px 8px rgba(0,0,0,0.3);
+  --shadow-glow: 0 0 40px rgba(220, 38, 38, 0.15);
+  --nav-blur: rgba(10, 10, 15, 0.85);
+}
+
+[data-theme="light"] {
+  --bg-primary: #f5f4f0;
+  --bg-secondary: #eeede8;
+  --bg-card: #ffffff;
+  --bg-elevated: #f9f8f4;
+  --surface: #e8e7e2;
+  --border: rgba(0,0,0,0.08);
+  --border-accent: rgba(180, 20, 20, 0.35);
+  --text-primary: #0f0f14;
+  --text-secondary: #555560;
+  --text-muted: #999;
+  --accent: #b91c1c;
+  --accent-glow: rgba(185, 28, 28, 0.15);
+  --accent-hover: #dc2626;
+  --gold: #b8891e;
+  --gold-glow: rgba(184, 137, 30, 0.15);
+  --green: #059669;
+  --green-glow: rgba(5, 150, 105, 0.15);
+  --gradient-hero: linear-gradient(135deg, #f5f4f0 0%, #eeede8 50%, #f0efe9 100%);
+  --shadow-card: 0 4px 24px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.06);
+  --shadow-glow: 0 0 40px rgba(185, 28, 28, 0.08);
+  --nav-blur: rgba(245, 244, 240, 0.9);
+}
+
+[data-theme="midnight"] {
+  --bg-primary: #050508;
+  --bg-secondary: #080810;
+  --bg-card: #0d0d18;
+  --bg-elevated: #12121e;
+  --surface: #1a1a28;
+  --border: rgba(100, 120, 255, 0.1);
+  --border-accent: rgba(99, 102, 241, 0.5);
+  --text-primary: #e8e8ff;
+  --text-secondary: #7878bb;
+  --text-muted: #444466;
+  --accent: #6366f1;
+  --accent-glow: rgba(99, 102, 241, 0.4);
+  --accent-hover: #818cf8;
+  --gold: #c084fc;
+  --gold-glow: rgba(192, 132, 252, 0.25);
+  --green: #34d399;
+  --green-glow: rgba(52, 211, 153, 0.2);
+  --gradient-hero: linear-gradient(135deg, #050508 0%, #0d0d18 50%, #08081a 100%);
+  --shadow-card: 0 8px 32px rgba(0,0,0,0.7), 0 2px 8px rgba(99,102,241,0.1);
+  --shadow-glow: 0 0 60px rgba(99, 102, 241, 0.15);
+  --nav-blur: rgba(5, 5, 8, 0.9);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Rajdhani', sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  line-height: 1.5;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 100%;
+  text-align: left;
+  border: none;
+}
+
+/* Typography */
+h1, h2, h3 {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--text-primary);
+}
+
+.display-font {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.05em;
+}
+
+.mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-secondary); }
+::-webkit-scrollbar-thumb { background: var(--surface); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+/* --- PRINT STYLES --- */
+@media print {
+  header, .no-print { display: none !important; }
+  body { background: white !important; color: black !important; }
+  .print-doc { box-shadow: none !important; border: none !important; }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px var(--accent-glow); }
+  50% { box-shadow: 0 0 40px var(--accent-glow), 0 0 80px var(--accent-glow); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.animate-fade-up {
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}

@@ -1,0 +1,58 @@
+/* App-level layout utilities */
+.page-wrapper {
+  min-height: calc(100vh - 80px);
+  background: var(--gradient-hero);
+  padding: 2rem 1.5rem 4rem;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* Glowing divider */
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  margin: 2rem 0;
+  opacity: 0.4;
+}
+
+/* Section label */
+.section-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+/* Status badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 2px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.badge-accent {
+  background: var(--accent);
+  color: white;
+}
+
+.badge-gold {
+  background: var(--gold);
+  color: #000;
+}
+
+.badge-green {
+  background: rgba(16,185,129,0.15);
+  color: var(--green);
+  border: 1px solid rgba(16,185,129,0.3);
+}
